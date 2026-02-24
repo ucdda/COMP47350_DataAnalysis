@@ -1,0 +1,10 @@
+Feature,count,unique,top,freq,%missing,cardinality
+Property Size Description,2836,4,greater than or equal to 38 sq metres and less than 125 sq metres,2105,94.74814814814815,4
+Eircode,16892,16823,D24W9NN,4,68.71851851851852,16823
+Address,54000,53261,"AUGHNASEDA, MONAGHAN",5,0.0,53261
+County,54000,26,Dublin,16592,0.0,26
+Sale Month,54000,12,12,6449,0.0,12
+Sale Year,54000,9,2016,6000,0.0,9
+Description of Property,54000,3,Second-Hand Dwelling house /Apartment,44332,0.0,3
+Not Full Market Price,54000,2,No,51150,0.0,2
+VAT Exclusive,54000,2,No,44486,0.0,2
