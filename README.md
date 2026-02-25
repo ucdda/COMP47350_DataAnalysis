@@ -108,7 +108,15 @@ zip 中应包含：
 - [ ] 完成个人贡献声明 PDF（分工比例 + 任务日志 + 签名）  
 - [ ] 打包 zip 并按命名规范提交
 
-## 7. 备注
+## 7. 待办（来自远端分支）
+
+To do list on 2.18:
+1. Address to Eircode, then set Eircode as category
+2. Check 5% price after dropping `Not Full Market Price` / `VAT` records
+3. Drop `Address` / `County` / `VAT Exclusive` / `Property Size Description`
+4. Categorize `Date of Sale` (year, month) / `Eircode` / `Description of Property`
+
+## 8. 备注
 
 1. notebook 需做到“代码 + 解释”清晰可读，变量命名自解释。  
 2. 报告（DQR/DQP）建议正文写结论，图表放附录。  
