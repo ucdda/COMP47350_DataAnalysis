@@ -75,9 +75,9 @@ zip 中应包含：
 ## 5. 当前项目文件（本仓库）
 
 ### 数据文件
-- `ppr-group-25208508-train-utf8.csv`（54,000 行，9 列）
+- `ppr-group-25208508-train.csv`（54,000 行，9 列）
 - `ppr-group-25208508-test.csv`（10,000 行，9 列）
-- `ppr-group-25208508-train-with-features.csv`（54,000 行，11 列）
+- `ppr-group-25208508-train-lab3-preview.csv`（54,000 行，11 列）
 
 ### 主要字段（原始训练集）
 - `Date of Sale (dd/mm/yyyy)`
