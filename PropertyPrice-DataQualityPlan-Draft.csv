@@ -1,12 +1,14 @@
 Feature,Feature Type,Data Quality Issue,Handling Strategy
-Date of Sale (dd/mm/yyyy),datetime64[us],No major issue detected,Keep as is
-Address,str,High-cardinality text/location feature,Feature engineering or drop based on model objective
-County,category,No major issue detected,Keep as is
-Eircode,str,High missing values (68.7%); High-cardinality text/location feature,Investigate source; consider drop or targeted imputation; Feature engineering or drop based on model objective
-Price (€),float64,Potential skewness and high-end outliers,Use log transform and winsorize/cap for modeling if needed
-Not Full Market Price,category,No major issue detected,Keep as is
-VAT Exclusive,category,No major issue detected,Keep as is
-Description of Property,category,No major issue detected,Keep as is
-Property Size Description,category,High missing values (94.7%),Investigate source; consider drop or targeted imputation
-Sale Year,category,No major issue detected,Keep as is
-Sale Month,category,No major issue detected,Keep as is
+Date of Sale (dd/mm/yyyy),datetime64[us],No major issue detected,Retain feature without transformation
+Address,str,High-cardinality text/location feature,"Extract compact location signal (e.g., zone), then drop raw high-cardinality field"
+County,category,No major issue detected,Retain feature without transformation
+Eircode,str,"High missing values (68.7%)
+High-cardinality text/location feature","Assess business relevance; drop feature if non-critical, otherwise apply rule-based imputation
+Extract compact location signal (e.g., zone), then drop raw high-cardinality field"
+Price (€),float64,Potential skewness and high-end outliers,Use log1p(Price) for modeling; apply percentile capping only when justified
+Not Full Market Price,category,No major issue detected,Retain feature without transformation
+VAT Exclusive,category,"Only for Description of Property == 'New Dwelling house /Apartment', VAT Exclusive=Yes implies +13.5% VAT adjustment","For New Dwelling house /Apartment with VAT Exclusive=Yes, create VAT-adjusted feature: Price * 1.135"
+Description of Property,category,No major issue detected,Retain feature without transformation
+Property Size Description,category,High missing values (94.7%),"Assess business relevance; drop feature if non-critical, otherwise apply rule-based imputation"
+Sale Year,category,No major issue detected,Retain feature without transformation
+Sale Month,category,No major issue detected,Retain feature without transformation
