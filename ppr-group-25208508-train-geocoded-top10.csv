@@ -1,0 +1,11 @@
+Date of Sale (dd/mm/yyyy),Address,County,Eircode,Price (€),Not Full Market Price,VAT Exclusive,Description of Property,Property Size Description,coordinate
+30/09/2016,"28 BRACKEN COURT, DONNYBROOK, CORK",Cork,,"€181,000.00",No,No,Second-Hand Dwelling house /Apartment,,"51.8614499,-8.4342193"
+20/12/2016,"2 AN CLOCHAR, CONVENT RD, DONERAILE",Cork,,"€50,152.49",No,Yes,New Dwelling house /Apartment,less than 38 sq metres,
+28/09/2016,"Apartment 7 The Court, Clonattin, Gorey",Wexford,,"€62,171.81",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,
+16/09/2016,"6 Monalin, Wicklow Hills, Newtownmountkennedy",Wicklow,,"€223,348.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,"53.0886448,-6.1134018"
+29/01/2016,"18 Lislea, Frascati Park, Blackrock",Dublin,,"€310,000.00",No,No,Second-Hand Dwelling house /Apartment,,
+03/10/2016,"CREGAREE, KILWOGAN, CELBRIDGE",Kildare,,"€515,000.00",No,No,Second-Hand Dwelling house /Apartment,,
+13/05/2016,"60 LILYS WAY, ONGAR, DUBLIN 15",Dublin,,"€220,000.00",No,No,Second-Hand Dwelling house /Apartment,,
+21/01/2016,"15 APPLEWOOD PLACE, APPLEWOOD, SWORDS",Dublin,,"€110,000.00",No,No,Second-Hand Dwelling house /Apartment,,"53.4702739,-6.2312682"
+03/03/2016,"KILMAGIG UPPER, AVOCA, WICKLOW",Wicklow,,"€390,000.00",No,No,Second-Hand Dwelling house /Apartment,,
+12/09/2016,"43 FOYLE RD, FAIRVIEW, DUBLIN 3",Dublin,,"€435,000.00",No,No,Second-Hand Dwelling house /Apartment,,"53.3674054,-6.2402865"
