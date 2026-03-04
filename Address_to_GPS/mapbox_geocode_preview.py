@@ -9,7 +9,7 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
 
-
+#  default=1000, 这里数量改掉,建议不要超过5000,否则可能会有请求过多被封IP的风险
 GEOCODE_URL = "https://api.mapbox.com/search/geocode/v6/forward"
 
 
@@ -46,10 +46,6 @@ def _feature_to_result(feature, status):
         "status": status,
         "latitude": lat if lat is not None else "",
         "longitude": lon if lon is not None else "",
-        "feature_id": feature.get("id", ""),
-        "place_name": feature.get("place_name", ""),
-        "match_code": json.dumps(props.get("match_code", {}), ensure_ascii=True),
-        "error": "",
     }
 
 
@@ -84,10 +80,6 @@ def geocode_address(query, token, country, timeout, relax_on_no_result):
         "status": "no_result",
         "latitude": "",
         "longitude": "",
-        "feature_id": "",
-        "place_name": "",
-        "match_code": "",
-        "error": "",
     }
 
 
@@ -112,7 +104,7 @@ def parse_args():
     )
     parser.add_argument(
         "--output",
-        default="COMP47350_DataAnalysis/Address_to_GPS/ppr-group-25208508-train-lab3-preview-geocoded-1000.csv",
+        default="COMP47350_DataAnalysis/Address_to_GPS/ppr-group-25208508-train-lab3-preview-geocoded.csv",
         help="Output CSV path.",
     )
     parser.add_argument(
@@ -158,6 +150,11 @@ def parse_args():
         action="store_true",
         help="Disable relaxed fallback search when strict address lookup returns no result.",
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume from existing output CSV: skip completed rows and append new results.",
+    )
     return parser.parse_args()
 
 
@@ -185,17 +182,40 @@ def main():
             "geocode_status",
             "latitude",
             "longitude",
-            "mapbox_feature_id",
-            "mapbox_place_name",
-            "mapbox_match_code",
-            "geocode_error",
         ]
         # Keep output fixed at longitude; drop all fields after it.
         out_fields = full_out_fields[: full_out_fields.index("longitude") + 1]
 
-        with output_path.open("w", newline="", encoding="utf-8") as f_out:
+        resume_skip = 0
+        write_mode = "w"
+        if args.resume and output_path.exists():
+            with output_path.open("r", newline="", encoding="utf-8") as f_existing:
+                existing_reader = csv.DictReader(f_existing)
+                if not existing_reader.fieldnames:
+                    print(
+                        "Existing output CSV has no header. Remove it or run without --resume.",
+                        file=sys.stderr,
+                    )
+                    return 1
+                if "geocode_status" not in existing_reader.fieldnames:
+                    print(
+                        "Existing output CSV is missing geocode_status. Remove it or run without --resume.",
+                        file=sys.stderr,
+                    )
+                    return 1
+
+                for existing_row in existing_reader:
+                    if (existing_row.get("geocode_status") or "").strip():
+                        resume_skip += 1
+                    else:
+                        # Resume safely from the first non-completed row.
+                        break
+            write_mode = "a"
+
+        with output_path.open(write_mode, newline="", encoding="utf-8") as f_out:
             writer = csv.DictWriter(f_out, fieldnames=out_fields)
-            writer.writeheader()
+            if write_mode == "w":
+                writer.writeheader()
 
             processed = 0
             queried = 0
@@ -204,6 +224,8 @@ def main():
             error = 0
             empty_query = 0
             for idx, row in enumerate(reader):
+                if idx < resume_skip:
+                    continue
                 if idx >= args.limit:
                     break
 
@@ -212,10 +234,6 @@ def main():
                     "status": "empty_query",
                     "latitude": "",
                     "longitude": "",
-                    "feature_id": "",
-                    "place_name": "",
-                    "match_code": "",
-                    "error": "",
                 }
 
                 if query:
@@ -230,7 +248,7 @@ def main():
                         )
                     except Exception as exc:
                         result["status"] = "error"
-                        result["error"] = str(exc)
+                        print(f"Geocode error on row {idx + 1}: {exc}", file=sys.stderr)
 
                 status = result["status"]
                 if status in {"ok", "ok_relaxed_area"}:
@@ -246,10 +264,6 @@ def main():
                 row["geocode_status"] = status
                 row["latitude"] = result["latitude"]
                 row["longitude"] = result["longitude"]
-                row["mapbox_feature_id"] = result["feature_id"]
-                row["mapbox_place_name"] = result["place_name"]
-                row["mapbox_match_code"] = result["match_code"]
-                row["geocode_error"] = result["error"]
                 writer.writerow({k: row.get(k, "") for k in out_fields})
 
                 processed += 1
@@ -259,6 +273,8 @@ def main():
                     print(f"Processed {processed} rows...")
 
     print(f"Done. Wrote {processed} rows to: {output_path}")
+    if args.resume and output_path.exists():
+        print(f"- resumed_skip: {resume_skip}")
     print("Summary:")
     print(f"- queried: {queried}")
     print(f"- success: {success}")
