@@ -1,0 +1,301 @@
+Date of Sale (dd/mm/yyyy),Address,County,Eircode,Price (€),Not Full Market Price,VAT Exclusive,Description of Property,Property Size Description,geocode_status,latitude,longitude,geocode_provider,dublin_district
+30/09/2016,"28 BRACKEN COURT, DONNYBROOK, CORK",Cork,,"€181,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+20/12/2016,"2 AN CLOCHAR, CONVENT RD, DONERAILE",Cork,,"€50,152.49",No,Yes,New Dwelling house /Apartment,less than 38 sq metres,,,,,
+28/09/2016,"Apartment 7 The Court, Clonattin, Gorey",Wexford,,"€62,171.81",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+16/09/2016,"6 Monalin, Wicklow Hills, Newtownmountkennedy",Wicklow,,"€223,348.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+29/01/2016,"18 Lislea, Frascati Park, Blackrock",Dublin,,"€310,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.299848,-6.182849,mapbox,
+03/10/2016,"CREGAREE, KILWOGAN, CELBRIDGE",Kildare,,"€515,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+13/05/2016,"60 LILYS WAY, ONGAR, DUBLIN 15",Dublin,,"€220,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.39796,-6.441167,mapbox,15
+21/01/2016,"15 APPLEWOOD PLACE, APPLEWOOD, SWORDS",Dublin,,"€110,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.4702739,-6.2312682,nominatim,
+03/03/2016,"KILMAGIG UPPER, AVOCA, WICKLOW",Wicklow,,"€390,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+12/09/2016,"43 FOYLE RD, FAIRVIEW, DUBLIN 3",Dublin,,"€435,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3674053,-6.2402865,nominatim,3
+18/02/2016,"25 OAKHILL, SWEETFIELD, YOUGHAL",Cork,,"€110,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+14/09/2016,"361 MALAHIDE MARINA VILLAGE, MALAHIDE, DUBLIN",Dublin,,"€260,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.4543436,-6.1557158,nominatim,
+08/04/2016,"18 THE WILLOWS, OAKLEIGH WOOD, TULLA RD",Clare,,"€282,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+25/10/2016,"THE PRESBYTERY, OLDTOWN, DUBLIN",Dublin,,"€390,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.47156,-6.234685,mapbox,
+12/02/2016,"29 STOCKING WELL ROW, STOCKING AVE, RATHFARNHAM DUBLIN 16",Dublin,,"€220,500.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.271943,-6.320121,mapbox,16
+24/03/2016,"5 JAMES GATE, JAMES ST, WATERFORD",Waterford,,"€50,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+30/11/2016,"28 CARNEGIE COURT, NORTH ST, SWORDS",Dublin,,"€170,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.462255,-6.217909,mapbox,
+15/04/2016,"84 NEWCOURT RD, BRAY, WICKLOW",Wicklow,,"€600,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+27/10/2016,"92 GRATTAN LODGE, DONAGHMEDE, DUBLIN 13",Dublin,,"€357,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.401101,-6.166003,mapbox,13
+23/09/2016,"CLONMORE COURT, APT 3 OLD BALLYMUN RD, GLASNEVIN DUBLIN 9",Dublin,,"€250,500.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.376365,-6.291118,mapbox,11
+05/02/2016,"THE RED DOOR COTTAGE, LISTMINTON, BALINTRA",Donegal,,"€92,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/07/2016,"SUNSET VIEW, CLASHACOLLAIRE, KILKENNY ROAD",Kilkenny,,"€130,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+27/05/2016,"5 Fforster Terrace, Lucan",Dublin,,"€259,912.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,ok_mapbox_strict,53.350273,-6.425679,mapbox,
+22/06/2016,"5 Sundays Well, Bracken Park, Carpenterstown",Dublin,,"€259,911.89",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,ok_mapbox_relaxed,53.373306,-6.377576,mapbox,15
+04/02/2016,"APT 2, 2 BAILEYS NEW ST, WATERFORD",Waterford,,"€30,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+01/06/2016,"Cliff Road, Ballyheigue",Kerry,,"€66,000.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+19/12/2016,"HAZELDENE, BALLINANEESHAGH, WATERFORD",Waterford,,"€310,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+04/03/2016,"APT 3 HUMPHREYS PAROCHIAL HALL, TOWNS PARK, BALLYHAISE",Cavan,,"€14,250.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+26/02/2016,"21 ROSEMOUNT, THURLES, CO TIPPERARY",Tipperary,,"€300,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+10/06/2016,"19 Dalriada Walk, Knocklyonne, Dublin 16",Dublin,,"€339,977.83",No,Yes,New Dwelling house /Apartment,less than 38 sq metres,ok_mapbox_strict,53.271148,-6.32742,mapbox,16
+16/11/2016,"7 CAHEROYAN DR, ATHENRY, GALWAY",Galway,,"€115,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+03/06/2016,"B1 EDEN HALL, MODEL FARM RD, CORK",Cork,,"€125,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+12/07/2016,"MOORPARK, BIRR, COUNTY OFFALY",Offaly,,"€112,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+18/08/2016,"SPRINGMOUNT COTTAGE, WOOD RD CLONLARA, CLARE",Clare,,"€227,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+12/08/2016,"39 ABBEY COURT, LIMERICK RD, ENNIS",Clare,,"€155,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+02/06/2016,"SHANAVALLA, BALLYMACELLIGOTT, TRALEE",Kerry,,"€137,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+20/07/2016,"21 ROSEHILL, OCALLAGHAN STRAND, LIMERICK",Limerick,,"€260,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+05/04/2016,"1 COURT VIEW, ROSCOMMON, ROSCOMMON",Roscommon,,"€118,000.00",Yes,No,Second-Hand Dwelling house /Apartment,,,,,,
+01/11/2016,"8 MEADOWBROOK, TRAMORE, WATERFORD",Waterford,,"€196,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+12/05/2016,"8 WOODHAVEN, MERLIN PARK, GALWAY",Galway,,"€300,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+11/01/2016,"23 FRENCHPARK, ORANMORE, GALWAY",Galway,,"€125,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/12/2016,"31 RAVENSWOOD VIEW, CLONEE, DUBLIN 15",Dublin,,"€170,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.394344,-6.426644,mapbox,15
+29/08/2016,"25 CALTRAGH HEIGHTS, CALTRAGH, SLIGO",Sligo,,"€132,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/03/2016,"19 Abbey Court, Ballina",Mayo,,"€67,841.40",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+28/10/2016,"3 THE SPIRES, INNISHANNON, CORK",Cork,,"€455,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/04/2016,"BALLYMORRIS RD, PORTARLINGTON, LAOIS",Laois,,"€135,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+01/11/2016,"59 Carrigweir, Tuam",Galway,,"€116,775.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+15/09/2016,"4 ARD NA GREINE, CELBRIDGE ROAD, MAYNOOTH",Kildare,,"€528,634.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 125 sq metres,,,,,
+25/01/2016,"broomfield, midleton",Cork,,"€46,000.00",No,Yes,New Dwelling house /Apartment,greater than 125 sq metres,,,,,
+28/10/2016,"139 THE COURT, DUNBOYNE CASTEL, DUNBOYNE",Meath,,"€151,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+27/04/2016,"11 ATHLUMNEY VILLAS, RANELAGH, DUBLIN",Dublin,,"€275,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.32946,-6.260829,mapbox,6
+19/02/2016,"152 HEATHER HILL DOWNS, GRAIGUECULLEN, CARLOW",Laois,,"€158,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+26/10/2016,"11 EASTLY COURT COLLEGE WOOD, MALLOW, CORK",Cork,,"€175,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+18/07/2016,"92 SOUTHGATE 1 7 CORK ST, DUBLIN 8, DUBLIN",Dublin,,"€249,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.336178,-6.288613,mapbox,8
+22/07/2016,"12 VILLAGE COURT, UPPER PATRICK ST, KILKENNY",Kilkenny,,"€375,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/12/2016,"22 TEMPLE HALL, MOUNT SAINT ANNES, MILLTOWN",Dublin,,"€273,127.75",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,ok_mapbox_strict,53.337459,-6.245174,mapbox,2
+28/11/2016,"68 Dealg Ban, Ladysbridge",Cork,,"€220,264.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+20/12/2016,"91 THE ATRIUM, ROEBUCK HILL, FOSTERS AVE",Dublin,,"€365,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.31445,-6.317987,mapbox,12
+03/06/2016,"108 College Square, Terenure",Dublin,,"€596,600.00",No,Yes,New Dwelling house /Apartment,greater than 125 sq metres,ok_mapbox_strict,53.30746,-6.309111,mapbox,12
+15/07/2016,"8 AN CRANNLA, DRANSHA, BUNCRANA",Donegal,,"€90,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+02/08/2016,"ST GERARDS, THE BATTERIES, ATHLONE",Westmeath,,"€107,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+16/09/2016,"1 THORNMANBY ROAD, HOWTH, DUBLIN 13",Dublin,,"€425,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.372215,-6.058513,mapbox,13
+13/12/2016,"DRUMBEE, KILNALECK, COUNTY CAVAN",Cavan,,"€69,320.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+09/12/2016,"32 Downview, Farranlea Road",Cork,,"€156,800.57",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+22/07/2016,"15 CLUAIN AITEANN, BREE, ENNISCORTHY",Wexford,,"€80,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+09/09/2016,"41 OLD ISLAND RD, ISLAND RD, LIMERICK",Limerick,,"€90,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+26/08/2016,"BLOCK 4 APT 12, MAIN ST, TULLAMORE",Offaly,,"€80,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+20/04/2016,"5 Coirneal Chearta, Kilkee, Co. Clare",Clare,,"€74,008.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+27/07/2016,"35 DANGAN HEIGHTS, GALWAY, GALWAY",Galway,,"€277,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+05/01/2016,"10 Ard Dara Drive, Station Road, Blarney",Cork,,"€340,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+23/01/2016,"96 Ros Ard, Upper Glanmire, Ballinvriskig",Cork,,"€160,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+11/10/2016,"CLOUGLEAFIN, MITCHELSTOWN, CO CORK",Cork,,"€55,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+12/10/2016,"30 DUN CORAN, YOUGHAL, CO CORK",Cork,,"€160,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+11/04/2016,"110 CRANN NUA, PORTARLINGTON, LAOIS",Laois,,"€102,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/11/2016,"2 ST BRIGIDS CLOSE, KILLESTER, DUBLIN 5",Dublin,,"€400,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.380413,-6.20752,mapbox,5
+01/06/2016,"146 BALROTHERY EST, TALLAGHT, DUBLIN 24",Dublin,,"€205,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.2913056,-6.3369066,nominatim,24
+15/12/2016,"SPRINGFIELD HOUSE, LOWER ALBERT RD, GLENAGEARY",Dublin,,"€995,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.277483,-6.121529,mapbox,
+29/11/2016,"15 OAK MANOR, BALLACOLLIG, MOUNTMELLICK",Laois,,"€99,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/12/2016,"8 MAYSTON CRESCENT, FINGLAS, DUBLIN 11",Dublin,,"€120,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.385639,-6.140453,mapbox,13
+30/06/2016,"32 BUSHFIELD DR, CLONDALKIN, DUBLIN 22",Dublin,,"€250,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3098629,-6.4061640,nominatim,22
+10/03/2016,"MUSWELL GREEN, DROMORE, BANTRY",Cork,,"€150,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/04/2016,"9 The Downs, Whitefield Manor, Bettystown",Meath,,"€234,427.31",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+09/11/2016,"11 Parkside Walk, Parkside, Dublin 13",Dublin,,"€292,944.93",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,ok_nominatim,53.4069229,-6.1664109,nominatim,13
+01/12/2016,"CUSHEEN, CORBALLY, KILKEE",Clare,,"€230,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+01/04/2016,"KILLAGURTEEN, WATERVILLE, CO KERRY",Kerry,,"€327,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/04/2016,"67 BLASKET SQ, WATERVILLE, SNUGBORO RD DUBLIN 15",Dublin,,"€176,500.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.39212,-6.373201,mapbox,15
+21/04/2016,"42 CRUMLIN ROAD, CRUMLIN, DUBLIN 12",Dublin,,"€60,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3315073,-6.2955820,nominatim,8
+04/08/2016,"5 RICHARDSONS SQ, THE FOLLY, WATERFORD",Waterford,,"€139,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+10/10/2016,"1 SEAMOUNT, SALTHILL, GALWAY",Galway,,"€900,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+18/10/2016,"KILLAVALLIG, KANTURK, CORK",Cork,,"€39,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/06/2016,"1 ST JOSEPHS AVE, HENRY ST, GALWAY",Galway,,"€205,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+06/09/2016,"24 SEAGRAVE, THE LINKS, STATION RD",Dublin,,"€194,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.418407,-6.15298,mapbox,13
+06/05/2016,"CORMEEN, BALLYJAMESDUFF, CAVAN",Cavan,,"€64,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+10/11/2016,"37 GRANARY COURT, LADYSWELL, NORTH CITY LINK RD",Cork,,"€122,850.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+26/02/2016,"34 Whitethorn, Athgarvan",Kildare,,"€273,127.75",No,Yes,New Dwelling house /Apartment,greater than 125 sq metres,,,,,
+04/03/2016,"87 MADIERA WOOD, THE MOYNE, ENNISCORTHY",Wexford,,"€121,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+14/11/2016,"11 MOUNT SYMON AVE, CLONSILLA, DUBLIN 15",Dublin,,"€290,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3870960,-6.4198259,nominatim,15
+15/07/2016,"21 THE JETTY, MARKET POINT, PATRICK ST MULLINGAR",Westmeath,,"€74,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+27/04/2016,"1 OLD COURT VIEW, FIRHOUSE, DUBLIN 24",Dublin,,"€25,000.00",Yes,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.377231,-6.324663,mapbox,15
+13/05/2016,"3 CLUAIN AOIBHINN, CRADDOCKSTOWN, NAAS",Kildare,,"€385,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/07/2016,"KEENAGHAN, KILCAR, CO. DONEGAL",Donegal,,"€120,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+14/10/2016,"HILL RD, WHITEGATE, MIDLETON",Cork,,"€31,744.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/01/2016,"31 RAGLAN LANE, BALLSBRIDGE, DUBLIN 4",Dublin,,"€835,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.329944,-6.239529,mapbox,4
+30/03/2016,"155 MANOR COURT, WESTERN DISTRIBUTOR RD, GALWAY",Galway,,"€115,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+13/05/2016,"HARRYS COTTAGE, UPPER LOUTH SALT RD, GLEN",Donegal,,"€185,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+18/05/2016,"129 Asmount Mews, Silversprings",Cork,,"€132,158.59",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+29/09/2016,"32 Diswellstown Manor, Castleknock, Dublin 15",Dublin,,"€431,718.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 125 sq metres,ok_nominatim,53.3680640,-6.3861619,nominatim,15
+28/09/2016,"67 GREAT WILIAM O'BRIEN ST, CORK",Cork,,"€132,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+20/05/2016,"41 BAILE AN CHOISTE, HEADFORD RD, GALWAY",Galway,,"€151,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+16/12/2016,"THE BUNGALOW, DOONPETER, GLENVILLE",Cork,,"€265,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+05/10/2016,"CREGGANE, DUAGH, ABBEYFEALE P.O",Kerry,,"€158,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/10/2016,"6 DONORE RD, CIRCULAR RD SOUTH, DUBLIN 8",Dublin,,"€460,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.335323,-6.281842,mapbox,8
+26/07/2016,"109 ST HELENS RD, BOOTERSTOWN, DUBLIN",Dublin,,"€925,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.309947,-6.201925,mapbox,
+29/11/2016,"20 STRANDFIELD MANOR, SPAWELL RD, WEXFORD",Wexford,,"€190,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+01/03/2016,"G4 CLONMULLEN, EDENDERRY, CLONMULLEN",Offaly,,"€46,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+16/09/2016,"109 GRACEDIEU RD, WATERFORD, WATERFORD",Waterford,,"€73,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+07/04/2016,"1 HENRY STREET, WATERFORD, WATERFORD",Waterford,,"€55,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/12/2016,"18 BROMLEY WAY, ARDKEEN VILLAGE, DUNMORE RD",Waterford,,"€175,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+02/02/2016,"82 RINGSEND PARK, DUBLIN 4, DUBLIN",Dublin,,"€218,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3433754,-6.2210491,nominatim,4
+15/07/2016,"BALLYEAGH, BALLYBUNNION, KERRY",Kerry,,"€275,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+26/02/2016,"BALLINFONTA, CRATLOE, CLARE",Clare,,"€192,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+01/04/2016,"129 THE WATERMILL, WATERMILL RD, RAHENY",Dublin,,"€299,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.378528,-6.17455,mapbox,5
+17/02/2016,"108 The Links, Elm Park, Merrion Road",Dublin,,"€217,422.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.487449,-6.143188,mapbox,
+01/02/2016,"KILFREE, GURTEEN, BALLYMOTE",Sligo,,"€85,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+27/07/2016,"41 MOYLARAGH MEWS, BALBRIGGAN, DUBLIN",Dublin,,"€130,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.6111307,-6.2050599,nominatim,
+18/10/2016,"8 CROWE STREET, DUNDALK, CO LOUTH",Louth,,"€50,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+28/10/2016,"COOLNAGURRANE, SKIBBEREEN, CORK",Cork,,"€157,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+10/06/2016,"S THE KNOLL, CASHELDOWNS, KILKENNY",Kilkenny,,"€215,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+23/09/2016,"7 THE BEECHES, WOODVILLE, GLANMIRE",Cork,,"€275,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/12/2016,"DERRY ROAD, DURROW, CO. LAOIS",Laois,,"€148,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+28/06/2016,"KARIBU, STRANDHILL RD, SLIGO",Sligo,,"€294,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/09/2016,"40 PYNES VALLEY, BALLYVOLANE, CORK",Cork,,"€250,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+20/12/2016,"Apartment 180 Neptune Block, Honeypark, Dun Laoghaire",Dublin,,"€352,423.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,ok_mapbox_relaxed,53.278942,-6.142216,mapbox,
+10/11/2016,"64 RIVERRUN, LOUGH DOOLEY, BELTURBET",Cavan,,"€45,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/06/2016,"30 Kilheale Ave, Kilheale Manor, Kill",Kildare,,"€259,911.89",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+06/01/2016,"Attidermot, Aughrim, Ballinasloe",Galway,,"€107,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+30/09/2016,"60 Crenigans Banog, Milltown Road, Ashbourne",Meath,,"€245,814.98",No,Yes,New Dwelling house /Apartment,greater than or equal to 125 sq metres,,,,,
+27/07/2016,"86 TREES RD, MT MERRION, DUBLIN",Dublin,,"€875,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.2920075,-6.2102740,nominatim,
+16/12/2016,"2 the vale, moyglare hall, maynooth",Kildare,,"€387,664.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 125 sq metres,,,,,
+21/12/2016,"MULLYMUCKS, ROSCOMMON",Roscommon,,"€77,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+25/02/2016,"32 MILLBRIDGE AVE, SALLINS RD, NAAS",Kildare,,"€265,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+12/07/2016,"58 ST MARYS PARK, WALKINSTOWN, DUBLIN 12",Dublin,,"€250,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.322998,-6.322456,mapbox,12
+05/02/2016,"STARGAZER, DOOKS, GLENBEIGH",Kerry,,"€260,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+03/11/2016,"11 DUN NA MARA, ORANMORE, GALWAY",Galway,,"€175,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+20/10/2016,"19 CARROWBEG EST, WESTPORT, MAYO",Mayo,,"€205,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/06/2016,"BEECHWOOD, NENAGH, TIPPERARY",Tipperary,,"€267,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/12/2016,"LANE HOUSE, 5 KILLINCARRIG MANOR, THE BURNABY    GREYSTONES",Wicklow,,"€555,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+26/01/2016,"45 PRIORY HALL, SPAWELL RD, WEXFORD",Wexford,,"€144,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/04/2016,"RATHKENNY, ABBEYDORNEY, TRALEE",Kerry,,"€200,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/07/2016,"44 YELLOW MEADOWS DR, CLONDALKIN, DUBLIN 22",Dublin,,"€215,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3268541,-6.3791715,nominatim,12
+29/08/2016,"31 HEATHER GROVE, PALMERSTOWN, DUBLIN 20",Dublin,,"€320,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3526087,-6.3827551,nominatim,20
+11/07/2016,"7 Elder Heath Lawn, Elder Heath, Kiltipper Road",Dublin,,"€242,291.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,ok_mapbox_strict,53.270595,-6.379085,mapbox,24
+15/11/2016,"4 SANDYCOVE PHASE 1, BALLYMONEY, GOREY",Wexford,,"€184,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+12/04/2016,"41 AMIEN ST, AMIEN SQUARE BUILDING, DUBLIN 1",Dublin,,"€232,500.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.352394,-6.249481,mapbox,1
+04/08/2016,"OLDBRIDGE, WATERFORD ROAD LOWER, CARRICK BEG CARRICK ON SUIR",Tipperary,,"€103,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+16/08/2016,"APT 46, MANOR HALL APTS, MOUNR BROWNE DUBLIN 8",Dublin,,"€215,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.353569,-6.285845,mapbox,7
+07/04/2016,"5 BENGAL TERRACE, OLD CORK RD, LIMERICK",Limerick,,"€86,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+17/11/2016,"68 GRIFFITH PARADE, FINGLAS EAST, DUBLIN 11",Dublin,,"€229,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3829202,-6.2822856,nominatim,11
+27/04/2016,"119 HARBOUR VIEW, CROFTON RD, DUN LAOGHAIRE",Dublin,,"€232,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.386527,-6.067546,mapbox,13
+15/07/2016,"FIONN UISCE, DERRYDONNELL NORTH, ORANMORE",Galway,,"€377,800.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/07/2016,"19 BARTRA HEIGHTS, KILLALA, MAYO",Mayo,,"€85,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+18/07/2016,"392 COLLINSWOOD, BEAUMONT, DUBLIN 9",Dublin,,"€351,500.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3814471,-6.2368943,nominatim,9
+16/05/2016,"TEADIES LOWER, ENNISKEANE, CO CORK",Cork,,"€95,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/12/2016,"69 LA ROCHELLE, LAMB ALLEY, HIGH ST",Dublin,,"€140,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.609043,-6.181789,mapbox,
+20/05/2016,"145 SLI AN CHOISTE, MONKSLAND, ATHLONE",Westmeath,,"€78,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+10/10/2016,"3 COURTNEYS AVENUE, ROMAN STREET, CORK",Cork,,"€92,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+23/12/2016,"11 ARDEE COURT, CORK ST, DUBLIN 8",Dublin,,"€250,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,54.000854,-6.405719,mapbox,
+10/05/2016,"1 Timore Close, Upper Newcastle, Newcastle",Wicklow,,"€375,000.00",No,No,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+25/05/2016,"7 DARGANS WAY, RAILWAY AVENUE, SUTTON",Dublin,,"€430,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.391674,-6.120938,mapbox,13
+24/06/2016,"APT 3 FRIAR STREET, NENAGH, CO TIPPERARY",Tipperary,,"€30,334.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+07/04/2016,"70 CHERRYWOOD DR, CLONDALKIN, DUBLIN 22",Dublin,,"€185,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3200320,-6.4100602,nominatim,22
+12/10/2016,"25 MOYLARAGH MEWS, BALBRIGGAN, DUBLIN",Dublin,,"€120,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.6111307,-6.2050599,nominatim,
+04/11/2016,"27 DOMINICK STREET, MULLINGAR, COUNTY WESTMEATH",Westmeath,,"€81,300.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+03/05/2016,"78 Cartrun Breac, Ballinalee Road, Longford",Longford,,"€64,317.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+22/03/2016,"23 BRAMBLEFIELD CRESCENT, BLANCHARDSTOWN, DUBLIN",Dublin,,"€245,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.4044235,-6.4143522,nominatim,15
+06/07/2016,"12 ELM DR, CAHERDAVIN LAWN, LIMERICK",Limerick,,"€160,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+17/12/2016,"107 SLIABH, GORT, CARRON",Galway,,"€172,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+05/12/2016,"58 GRIFFITH AVE, CLONMEL, TIPPERARY",Tipperary,,"€90,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+01/07/2016,"7 STONEY HURST, DOORADOYLE, LIMERICK",Limerick,,"€135,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+29/02/2016,"8 BOURLUM WOOD, GREEN RD, CARLOW",Carlow,,"€207,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+05/02/2016,"APT 11 THE GLEBE, TOGHER RD, MONASTEREVIN",Kildare,,"€65,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+26/08/2016,"5 THE MEADOWS, BRIARFIELDS, CASTLETROY",Limerick,,"€130,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/06/2016,"3 CLARINA RETIREMENT VILLAGE, CLARINA",Limerick,,"€87,000.00",No,Yes,New Dwelling house /Apartment,less than 38 sq metres,,,,,
+20/12/2016,"47 LUS MOR, WHITEROCK HILL, WEXFORD",Wexford,,"€145,000.00",Yes,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/12/2016,"42 ORCHARD GROVE, KENMARE, CO KERRY",Kerry,,"€170,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+16/06/2016,"10 RIVER WALK, BANKS, CORBALLY",Clare,,"€152,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+30/09/2016,"1 Ardilea Crescent, Heidelberg, Ardilea",Dublin,,"€1,167,750.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 125 sq metres,ok_mapbox_strict,53.296394,-6.227016,mapbox,14
+12/05/2016,"16 BRINKWATER HOUSE, QUINCENTENNIAL DR, SALTHILL",Galway,,"€80,000.00",Yes,No,Second-Hand Dwelling house /Apartment,,,,,,
+16/11/2016,"13 GLENCASTLE, GLENBEIGH, KERRY",Kerry,,"€148,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+02/03/2016,"Alpha Villa, Newcourt Road, Bray",Wicklow,,"€500,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+17/05/2016,"35 DAKOTA COURT, ROYAL CANAL BANK, PHIBSBOROUGH DUBLIN 7",Dublin,,"€130,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.358015,-6.272165,mapbox,7
+09/11/2016,"11 MALTHOUSE GARDENS, MAIN ST, CASTLEBELLINGHAM",Louth,,"€120,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+30/07/2016,"30 FOXFIELD, GARRYDUFF, MAYO",Mayo,,"€150,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/10/2016,"16 Hazelwood Park, Hazelhatch Road, Celbridge",Kildare,,"€323,348.02",No,Yes,New Dwelling house /Apartment,less than 38 sq metres,,,,,
+22/12/2016,"2 Roseland Avenue, Cualanor, Upper Glenageary Road",Dublin,,"€753,304.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 125 sq metres,ok_mapbox_strict,53.287475,-6.141347,mapbox,
+30/06/2016,"THE COURTYARD HOUSE 4, EASTHAM HOUSE, EASRHAM RD",Meath,,"€108,400.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+29/04/2016,"3 RICHARDSTOWN, DONERAILE, CORK",Cork,,"€132,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+11/10/2016,"11 Hawthorn Hill, Rakeevan, Bailieborough",Cavan,,"€90,308.37",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+01/03/2016,"BLOCK 2 APT 2, RIVERWALK ACCOMODATION, INNER RING ROAD",Waterford,,"€55,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+06/12/2016,"9 COIS FARRAIGE, OLD GOLF LINKS RD, BLACKROCK",Louth,,"€185,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/09/2016,"2 Balure  Balure Lane, Church Road, Killiney",Dublin,,"€1,330,396.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 125 sq metres,ok_mapbox_relaxed,53.260136,-6.127157,mapbox,
+26/08/2016,"CROSBEG, TOOREEN, BALLYHAUNIS",Mayo,,"€33,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+23/12/2016,"APT 6, LEONARDS COURT, 67 LOWER CLANBRASSIL ST DUBLIN 8",Dublin,,"€227,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.403891,-6.401405,mapbox,15
+22/07/2016,"30 SLIABH SNEATH RD, LETTERKENNY, DONEGAL",Donegal,,"€47,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+28/10/2016,"GRANGE, KILLAVULLEN, MALLOW",Cork,,"€31,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+27/10/2016,"CHALET 1, REDCASTLE HOTEL, REDCASTLE",Donegal,,"€142,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+14/12/2016,"28 TULFARRIS VILLAGE, BLESSINGTON, WICKLOW",Wicklow,,"€125,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+19/02/2016,"35 RIVER OAKS, CLAREGALWAY, CO GALWAY",Galway,,"€169,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+03/06/2016,"HAZELBROOK COTTAGE, HAZELBROOK, MALAHIDE",Dublin,,"€450,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.428684,-6.157762,mapbox,
+02/12/2016,"INVER, BARNATRA, BALLINA",Mayo,,"€140,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+29/12/2016,"47 BALLYDAHEEN, MALLOW, COUNTY CORK",Cork,,"€25,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+26/04/2016,"91 APPLEWOOD, SWORDS, DUBLIN",Dublin,,"€125,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.4717793,-6.2319478,nominatim,
+09/12/2016,"48 Downview, Farranlea Road",Cork,,"€134,945.45",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+15/06/2016,"53 CEANNAN VIEW, LETTERKENNY, CO DONEGAL",Donegal,,"€112,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+29/02/2016,"GRANGE, FETHARD ON SEA, CO WEXFORD",Wexford,,"€82,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/03/2016,"5 CREAGH HOUSE, MARY ST, LIMERICK",Limerick,,"€86,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/06/2016,"4 MARINO POINT, NEW RD, BALLINASLOE",Galway,,"€55,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+19/04/2016,"17 THE GRANGE, JASPER BUILDING, BREWERY RD",Dublin,,"€430,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.517887,-6.267005,mapbox,
+26/08/2016,"CARNROCK, BELMULLET, MAYO",Mayo,,"€50,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+09/11/2016,"TALLANSTOWN, DUNALK, LOUTH",Louth,,"€65,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/09/2016,"38 HANNAVILLE PARK, TERENURE, DUBLIN 6W",Dublin,,"€920,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3105009,-6.2850550,nominatim,6
+28/01/2016,"House 3 Gerradstown Stud, Dunshaughlin",Meath,,"€100,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+25/10/2016,"24 Drummond Radhairc, Dundalk Road, Carrickmacross",Monaghan,,"€265,000.00",No,Yes,New Dwelling house /Apartment,less than 38 sq metres,,,,,
+29/02/2016,"8 Forge Hill Rise, Stamullen",Meath,,"€140,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+16/12/2016,"60 ROWANBYRN, BLACKROCK, DUBLIN",Dublin,,"€200,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.2884490,-6.1702899,nominatim,
+05/01/2016,"5 PARK VIEW, MILLSTREET, CORK",Cork,,"€106,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/04/2016,"11 The Park, Harbour Heights, Passage West",Cork,,"€190,132.16",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+02/11/2016,"102 WOODLAWN, ALLENWOOD",Kildare,,"€181,498.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+16/11/2016,"38 CUIRT NA HABHAINN, CLAREGALWAY, GALWAY",Galway,,"€180,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+27/10/2016,"23 SHEEPMOOR WAY, BLAKESTOWN, CLONSILLA DUBLIN 15",Dublin,,"€147,111.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.393608,-6.399703,mapbox,15
+25/02/2016,"20 FIANNA RD, THURLES, TIPPERARY",Tipperary,,"€59,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/12/2016,"12 PARNELL AVE, MERVUE, GALWAY",Galway,,"€217,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+06/05/2016,"11 RATHBEALE RISE, SWORDS, DUBLIN",Dublin,,"€295,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.4588800,-6.2277245,nominatim,
+19/02/2016,"460 CLONARD RD, CRUMLIN, DUBLIN 12",Dublin,,"€323,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3243783,-6.3062950,nominatim,12
+20/07/2016,"20 Dalriada Walk, Knocklyon",Dublin,,"€360,000.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,ok_nominatim,53.2711693,-6.3263946,nominatim,16
+28/10/2016,"74 ST MARKS DR, CLONDALKIN, DUBLIN 22",Dublin,,"€202,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.34328,-6.399656,mapbox,22
+29/11/2016,"Carra, Loughrea, Co. Galway",Galway,,"€96,916.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+23/11/2016,"5 THE CRESCENT, OLD FORT RD, BALLINCOLLIG",Cork,,"€220,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+04/08/2016,"36 JAIRDIN DR, LOUGHREA, GALWAY",Galway,,"€105,000.00",Yes,No,Second-Hand Dwelling house /Apartment,,,,,,
+31/08/2016,"6 The Crescent, Pipers Hill, Kilashee",Kildare,,"€348,017.60",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+20/04/2016,"HARTLEY, CARRICK ON SHANNON, CO LEITRIM",Leitrim,,"€95,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/03/2016,"19 WILLOW TERRACE, LISDUGGAN, WATERFORD",Waterford,,"€77,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+05/09/2016,"69  Cois Na Mara, Golf Links Road, Bettystown",Meath,,"€240,000.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+05/09/2016,"9 DERRYNANE PARADE, PHIBSBOROUGH, DUBLIN 7",Dublin,,"€325,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.361015,-6.263694,mapbox,1
+11/10/2016,"34 ARAS NA TRA, COIS CUAIN, SALTHILL",Galway,,"€373,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+11/02/2016,"8 WARRENSTOWN GROVE, BLANCHARDSTOWN, DUBLIN 15",Dublin,,"€196,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.4005493,-6.3824663,nominatim,15
+18/11/2016,"1 OAK AVE, HILLVIEW, WATERFORD",Waterford,,"€160,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/12/2016,"20 MAYDENHAYES SQUARE, MAYDENHAYES, MORNINGTON",Meath,,"€246,255.50",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+30/06/2016,"KILCOLEMAN HOUSE, KILCOLEMAN, KINSALE",Cork,,"€660,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/11/2016,"57 LEINSTER PARK, HAROLDS CROSS, DUBLIN 6W",Dublin,,"€580,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.323303,-6.275423,mapbox,6
+29/06/2016,"GROUND FLOORS, DUNKEN HOUSE, GRATTON ST",Cork,,"€96,250.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+12/02/2016,"CORLISLEA, BALLINAGH, CO CAVAN",Cavan,,"€160,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+14/12/2016,"28 Limetree Hall, Maynooth",Kildare,,"€389,750.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+08/07/2016,"31 THE BRAMBLES, CASTLEPARK, ST JOSEPHS RD",Cork,,"€170,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+03/02/2016,"5 Moore Abbey Court, Monasterevin",Kildare,,"€161,145.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+13/12/2016,"242 Boireann Bheag, Roscam, Galway",Galway,,"€167,250.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 125 sq metres,,,,,
+08/04/2016,"72 MOUNTAIN VIEW, NAAS, KILDARE",Kildare,,"€250,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+04/10/2016,"5 Coill Doire, Faha, Killarney",Kerry,,"€220,575.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+09/06/2016,"5 CRIMSOM MEWS, PARKEEN CROSS ROADS, ROSSCARBERY",Cork,,"€167,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+25/11/2016,"4 LOWER BRIDGE STREET, CALLAN, CO. KILKENNY",Kilkenny,,"€33,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+16/09/2016,"19 WOODFIELD, GALWAY RD, TUAM",Galway,,"€165,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/11/2016,"BILLISTOWN, DEVLIN, WESTMEATH",Westmeath,,"€127,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+17/12/2016,"10 ARLINGTON, PARK RD, KILLARNEY",Kerry,,"€205,000.00",Yes,No,Second-Hand Dwelling house /Apartment,,,,,,
+23/02/2016,"43 GLENVIEW, GALWAY RD, ROSCOMMON",Roscommon,,"€79,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+29/04/2016,"66 KIRKPATRICK HOUSE, SPENCER DOCK, DUBLIN 1",Dublin,,"€407,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.35017,-6.24167,mapbox,1
+17/05/2016,"ANNAGHARANETT KILINKERE, VIRGINIA, CAVAN",Cavan,,"€190,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+28/10/2016,"THE RIDGE, OLD LEIGHLIN, CARLOW",Carlow,,"€60,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+21/12/2016,"35 ROSEMOUNT EST, DUNDRUM, DUBLIN 14",Dublin,,"€400,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.2958771,-6.2435608,nominatim,14
+12/08/2016,"BALLYLAHY, TEMPLEMORE, TIPPERARY",Tipperary,,"€210,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+19/04/2016,"2 CONABURY HILL, CASTLEBLAYNEY, MONAGHAN",Monaghan,,"€90,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+17/06/2016,"APT 5 65 MAIN ST, CLONGRIFFEN, DUBLIN 13",Dublin,,"€194,713.65",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,ok_mapbox_strict,53.402698,-6.156586,mapbox,13
+15/09/2016,"30 BEACHSIDE DR, RIVERCHAPEL, GOREY",Wexford,,"€125,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+24/01/2016,"10 Sunview Court, Douglas, Cork",Cork,,"€204,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+28/11/2016,"32A CLAREVILLE RD, HAROLDS CROSS, DUBLIN 6W",Dublin,,"€375,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.370239,-6.279802,mapbox,11
+22/06/2016,"305 BLOCK A, HAMPTON LODGE, GRACE PARK RD DUBLIN 9",Dublin,,"€280,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.374225,-6.243048,mapbox,9
+11/07/2016,"79 ST BRIDGETS SQUARE, PORTARLINGTON, CO LAOIS",Laois,,"€75,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/06/2016,"10 LAKESHORE HOLIDAY VILLAGE, BLESSINGTON, HOLIDAY VILLAGE",Wicklow,,"€125,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+20/01/2016,"20 Brindle Hill, Charleville",Cork,,"€79,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+17/11/2016,"3 VALLEY WALK, DRUID VALLEY, CABINTEELY DUBLIN 18",Dublin,,"€610,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.2464408,-6.1409433,nominatim,18
+30/08/2016,"10 BELLGREE CLOSE, TYRRELSTOWN, BLANCHARDSTOWN DUBLIN 15",Dublin,,"€220,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.421546,-6.384845,mapbox,15
+26/04/2016,"Various Properties  Millhouse, Woodland Grove  New Ross, Wexford",Wexford,,"€409,500.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+04/04/2016,"20 THE MALTINGS, BRAY, WICKLOW",Wicklow,,"€255,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/12/2016,"35 THE RISE, KINGSWOOD, TALLAGHT DUBLIN 24",Dublin,,"€238,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3029251,-6.3718154,nominatim,24
+09/11/2016,"39 ESKER MEADOW GREEN, LUCAN, DUBLIN",Dublin,,"€317,500.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.3494427,-6.4335511,nominatim,
+28/06/2016,"22 PINEBROOK VIEW, CLONSILLA, DUBLIN 15",Dublin,,"€160,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.39804,-6.414084,mapbox,15
+09/03/2016,"205 THE WILLOWS, BOREENMANNA RD, CORK",Cork,,"€200,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+04/03/2016,"42 FOX LODGE MANOR, RATOATH, CO MEATH",Meath,,"€170,000.00",Yes,No,Second-Hand Dwelling house /Apartment,,,,,,
+15/07/2016,"497A BALLINTEER RD, WOODPARK, DUBLIN 16",Dublin,,"€650,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_nominatim,53.2720531,-6.2446605,nominatim,18
+08/04/2016,"APARTMENT 5 BLOCK 7, GALLERY QUAY, GRAND CANAL DOCK",Dublin,,"€265,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.324916,-6.23227,mapbox,4
+08/07/2016,"CLOONEYQUINN, ELPHIN, ROSCOMMON",Roscommon,,"€110,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+20/06/2016,"RATHLOOSE, POWERSTOWN, CLONMEL",Tipperary,,"€320,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+07/04/2016,"15 CITY SQ, GLOUCESTER ST SOUTH, DUBLIN 2",Dublin,,"€193,516.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.346424,-6.250974,mapbox,2
+26/08/2016,"IRREMORE, LISTOWEL, KERRY",Kerry,,"€200,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+22/08/2016,"CAHERULTAN, LOUGHADERRA, CASTLEMARTYR",Cork,,"€140,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+05/04/2016,"APT 306 ALTMORE HOUSE, TARA ST, TULLAMORE OFFALY",Offaly,,"€110,000.00",Yes,No,Second-Hand Dwelling house /Apartment,,,,,,
+08/06/2016,"5  The Stables, Monivea",Galway,,"€136,916.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+27/10/2016,"36 Hayfield, Straffan Road, Maynooth",Kildare,,"€229,075.00",No,Yes,New Dwelling house /Apartment,greater than or equal to 38 sq metres and less than 125 sq metres,,,,,
+01/06/2016,"18 ROCHDALE, HONEY PARK, KILL AVENUE   DUN LAOGHAIRE",Dublin,,"€102,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_strict,53.282711,-6.148626,mapbox,
+09/11/2016,"43 SILVERBROOK, MILL RD, CORBALLY",Limerick,,"€165,000.00",No,No,Second-Hand Dwelling house /Apartment,,,,,,
+30/09/2016,"16 ROWAN HALL, MILLBROOK COURT, MILLTOWN DUBLIN 6",Dublin,,"€410,000.00",No,No,Second-Hand Dwelling house /Apartment,,ok_mapbox_relaxed,53.341467,-6.299362,mapbox,8
