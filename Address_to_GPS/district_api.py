@@ -31,6 +31,7 @@ import time
 
 
 NOMINATIM_REVERSE_URL = "https://nominatim.openstreetmap.org/reverse"
+MAPBOX_GEOCODE_URL = "https://api.mapbox.com/geocoding/v5/mapbox.places"
 
 
 @dataclass
@@ -42,6 +43,11 @@ class DublinDistrictResult:
     raw_postcode: str
     raw_address: Dict[str, Any]
     raw_payload: Dict[str, Any]
+    # provider: "mapbox" / "nominatim" / ""
+    provider: str = ""
+    # 是否在本次查询中调用了 Mapbox / Nominatim（用于日志统计）
+    mapbox_called: bool = False
+    nominatim_called: bool = False
 
 
 def _reverse_geocode(lat: float, lon: float, timeout: float = 20.0) -> Dict[str, Any]:
@@ -72,6 +78,31 @@ def _reverse_geocode(lat: float, lon: float, timeout: float = 20.0) -> Dict[str,
     req = Request(url, headers=headers)
 
     with urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def _reverse_geocode_mapbox(
+    lat: float,
+    lon: float,
+    token: str,
+    timeout: float = 20.0,
+) -> Dict[str, Any]:
+    """
+    使用 Mapbox 反向地理编码获取行政区划信息。
+    这里主要关注 postcode / place / region，用于推断都柏林区号。
+    """
+    if not token:
+        raise ValueError("Mapbox token 为空。")
+
+    # Mapbox 反向地理编码要求经纬度顺序为 {lon},{lat}
+    coordinate = f"{lon:.6f},{lat:.6f}"
+    params = {
+        "types": "postcode,place,region",
+        "access_token": token,
+    }
+    url = f"{MAPBOX_GEOCODE_URL}/{coordinate}.json?{urlencode(params)}"
+
+    with urlopen(url, timeout=timeout) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
@@ -116,13 +147,67 @@ def get_dublin_district(
     lat: float,
     lon: float,
     timeout: float = 20.0,
+    token: Optional[str] = None,
 ) -> DublinDistrictResult:
     """
     给定经纬度，只在位于都柏林时返回区号信息。
 
+    查询顺序：
+    1）如果提供了 Mapbox token，优先使用 Mapbox 反向地理编码；
+    2）如果 Mapbox 未能解析出区号，则回退到 Nominatim。
+
     - 如果不是都柏林，is_dublin=False，district_code=""。
     - 如果是都柏林，但 postcode 无法解析区号，也会返回 district_code=""。
     """
+    mapbox_called_flag = False
+
+    # 1) 优先尝试 Mapbox（如果提供了 token）
+    if token:
+        try:
+            mapbox_called_flag = True
+            payload_mb = _reverse_geocode_mapbox(lat=lat, lon=lon, token=token, timeout=timeout)
+            features = payload_mb.get("features", []) or []
+
+            # 找到第一个 place_type 包含 postcode 的 feature
+            postcode_feature = None
+            for f in features:
+                if "postcode" in (f.get("place_type") or []):
+                    postcode_feature = f
+                    break
+
+            raw_postcode = ""
+            district_code = ""
+            is_dublin = False
+
+            if postcode_feature:
+                raw_postcode = postcode_feature.get("text") or ""
+                district_code = _extract_dublin_district_from_postcode(raw_postcode)
+
+                # 判断是否位于都柏林：在 place_name 或 context 中查找 Dublin/都柏林
+                ctx_texts = [postcode_feature.get("place_name", "")]
+                for ctx in postcode_feature.get("context", []) or []:
+                    ctx_texts.append(ctx.get("text", ""))
+                ctx_all = " ".join(ctx_texts).lower()
+                is_dublin = ("dublin" in ctx_all) or ("都柏林" in ctx_all)
+
+            if is_dublin and district_code:
+                return DublinDistrictResult(
+                    lat=lat,
+                    lon=lon,
+                    is_dublin=True,
+                    district_code=district_code,
+                    raw_postcode=raw_postcode,
+                    raw_address={},
+                    raw_payload=payload_mb,
+                    provider="mapbox",
+                    mapbox_called=True,
+                    nominatim_called=False,
+                )
+        except Exception:
+            # Mapbox 失败时静默回退到 Nominatim
+            pass
+
+    # 2) 回退到 Nominatim
     payload = _reverse_geocode(lat=lat, lon=lon, timeout=timeout)
     address = payload.get("address", {}) or {}
 
@@ -143,6 +228,9 @@ def get_dublin_district(
         raw_postcode=raw_postcode,
         raw_address=address,
         raw_payload=payload,
+        provider="nominatim",
+        mapbox_called=mapbox_called_flag,
+        nominatim_called=True,
     )
 
 
@@ -151,6 +239,7 @@ def annotate_csv_with_districts(
     output_prefix: str = "districted",
     timeout: float = 20.0,
     limit: Optional[int] = None,
+    mapbox_token: Optional[str] = None,
 ) -> Path:
     """
     读取 geocoded CSV，只对 County 为 Dublin 的行进行区划查询，并写出新文件。
@@ -170,6 +259,21 @@ def annotate_csv_with_districts(
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
     out_path = script_dir / f"{output_prefix}-{timestamp}.csv"
 
+    # 为了在日志中打印“当前行 / 总行数”，如果未设置 limit，则需要先统计一次总数据行数
+    total_target_for_log: Optional[int] = limit
+    if limit is None:
+        with in_path.open("r", newline="", encoding="utf-8-sig") as f_count:
+            reader_count = csv.reader(f_count)
+            # 第 1 行是表头，不算在数据行里
+            first = True
+            total_rows_all = 0
+            for _ in reader_count:
+                if first:
+                    first = False
+                    continue
+                total_rows_all += 1
+        total_target_for_log = total_rows_all
+
     with in_path.open("r", newline="", encoding="utf-8-sig") as f_in, out_path.open(
         "w", newline="", encoding="utf-8"
     ) as f_out:
@@ -187,7 +291,10 @@ def annotate_csv_with_districts(
         processed = 0
         dublin_rows = 0
         district_filled = 0
-        reverse_calls = 0
+        mapbox_calls = 0
+        nominatim_calls = 0
+        # 用于日志显示的“总共计划处理多少行”：有 limit 用 limit，否则用真实数据行数
+        total_target = total_target_for_log
 
         for row in reader:
             # 如果设置了 limit，则在处理前先检查是否已达到上限
@@ -202,8 +309,9 @@ def annotate_csv_with_districts(
                 row.setdefault("dublin_district", "")
                 writer.writerow(row)
                 print(
-                    f"第 {processed} 行：County 非 Dublin，跳过区划查询。"
-                    f" [Nominatim 反向查询次数：{reverse_calls}，成功写入区号：{district_filled}]",
+                    f"第 {processed}/{total_target} 行：County 非 Dublin，跳过区划查询。"
+                    f" [Mapbox 调用次数：{mapbox_calls}，Nominatim 调用次数：{nominatim_calls}，"
+                    f"成功写入区号：{district_filled}]",
                     file=sys.stderr,
                 )
                 continue
@@ -220,40 +328,49 @@ def annotate_csv_with_districts(
                 row.setdefault("dublin_district", "")
                 writer.writerow(row)
                 print(
-                    f"第 {processed} 行：经纬度无效，跳过区划查询。"
-                    f" [Nominatim 反向查询次数：{reverse_calls}，成功写入区号：{district_filled}]",
+                    f"第 {processed}/{total_target} 行：经纬度无效，跳过区划查询。"
+                    f" [Mapbox 调用次数：{mapbox_calls}，Nominatim 调用次数：{nominatim_calls}，"
+                    f"成功写入区号：{district_filled}]",
                     file=sys.stderr,
                 )
                 continue
 
-            # 发送 Nominatim 反向查询
-            reverse_calls += 1
+            # 发送区划查询（内部可能调用 Mapbox 与/或 Nominatim）
             try:
-                result = get_dublin_district(lat=lat, lon=lon, timeout=timeout)
+                result = get_dublin_district(lat=lat, lon=lon, timeout=timeout, token=mapbox_token)
             except Exception as exc:
                 print(
-                    f"第 {processed} 行：反向地理编码失败：{exc}"
-                    f" [Nominatim 反向查询次数：{reverse_calls}，成功写入区号：{district_filled}]",
+                    f"第 {processed}/{total_target} 行：反向地理编码失败：{exc}"
+                    f" [Mapbox 调用次数：{mapbox_calls}，Nominatim 调用次数：{nominatim_calls}，"
+                    f"成功写入区号：{district_filled}]",
                     file=sys.stderr,
                 )
                 row.setdefault("dublin_district", "")
                 writer.writerow(row)
                 continue
 
+            # 根据结果统计调用次数
+            if result.mapbox_called:
+                mapbox_calls += 1
+            if result.nominatim_called:
+                nominatim_calls += 1
+
             if result.is_dublin and result.district_code:
                 row["dublin_district"] = result.district_code
                 district_filled += 1
                 line_msg = f"Dublin 区号查询成功，district={result.district_code!r}。"
             else:
-                row.setdefault("dublin_district", "")
-                line_msg = "在 Dublin 范围内但未能解析出区号。"
+                # 对 Dublin 行但未能解析出 district 的情况，写入 -1，方便后续统计 / 过滤
+                row["dublin_district"] = "-1"
+                line_msg = "在 Dublin 范围内但未能解析出区号（写入 -1）。"
 
             writer.writerow(row)
 
             # 每次请求后输出一行日志，风格类似 multi_api_calling.py
             print(
-                f"第 {processed} 行：{line_msg}"
-                f" [Nominatim 反向查询次数：{reverse_calls}，成功写入区号：{district_filled}]",
+                f"第 {processed}/{total_target} 行：{line_msg}"
+                f" [Mapbox 调用次数：{mapbox_calls}，Nominatim 调用次数：{nominatim_calls}，"
+                f"成功写入区号：{district_filled}]",
                 file=sys.stderr,
             )
 
@@ -302,6 +419,11 @@ def main(argv: Optional[list[str]] = None) -> int:
         help="批量模式下输出文件前缀（默认：districted）。",
     )
     parser.add_argument(
+        "--token",
+        default=os.getenv("MAPBOX_ACCESS_TOKEN", ""),
+        help="Mapbox API token（可选，提供则优先通过 Mapbox 反向地理编码获取区号）。",
+    )
+    parser.add_argument(
         "--limit",
         type=int,
         default=None,
@@ -312,12 +434,14 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     # 批量模式：如果提供了 input，就优先按 CSV 处理
     if args.input:
+        mapbox_token = args.token.strip() or None
         try:
             annotate_csv_with_districts(
                 input_path=Path(args.input),
                 output_prefix=args.output_prefix,
                 timeout=args.timeout,
                 limit=args.limit,
+                mapbox_token=mapbox_token,
             )
         except Exception as exc:
             print(f"批量处理失败：{exc}", file=sys.stderr)
