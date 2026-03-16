@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 DEFAULT_CENTER = (53.425, -7.944)  # Ireland approx center
-SUCCESS_STATUSES = {"ok", "ok_relaxed_area"}
+SUCCESS_STATUSES = {"ok_nominatim", "ok_mapbox_strict", "ok_mapbox_relaxed"}
 
 
 def parse_args():
@@ -15,12 +15,12 @@ def parse_args():
     )
     parser.add_argument(
         "--input",
-        default="COMP47350_DataAnalysis/Address_to_GPS/ppr-group-25208508-train-lab3-preview-geocoded-1000.csv",
-        help="Input geocoded CSV path.",
+        default="geocoded-20260310-215024.csv",
+        help="Input geocoded CSV (e.g. geocoded-YYYYMMDD-HHMMSS.csv from multi_api_calling.py).",
     )
     parser.add_argument(
         "--output",
-        default="COMP47350_DataAnalysis/Address_to_GPS/geocode_map_demo_osm.html",
+        default="geocode_map_demo_osm.html",
         help="Output HTML path.",
     )
     return parser.parse_args()
@@ -192,8 +192,13 @@ def build_html(center, success_points, failed_points):
 
 def main():
     args = parse_args()
+    script_dir = Path(__file__).resolve().parent
     input_path = Path(args.input)
     output_path = Path(args.output)
+    if not input_path.is_absolute():
+        input_path = script_dir / input_path
+    if not output_path.is_absolute():
+        output_path = script_dir / output_path
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     success_points, failed_points = load_points(input_path)
