@@ -5,18 +5,20 @@ import json
 from pathlib import Path
 
 
-DEFAULT_CENTER = (53.425, -7.944)  # Ireland approx center
+DUBLIN_CENTER = (53.35, -6.26)
 SUCCESS_STATUSES = {"ok_nominatim", "ok_mapbox_strict", "ok_mapbox_relaxed"}
+COLOR_DISTRICT_UNKNOWN = "#1976d2"  # blue: dublin_district == -1
+COLOR_DISTRICT_KNOWN = "#d32f2f"  # red: otherwise
 
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Render geocoding results on OpenStreetMap (success=red, failure=gray)."
+        description="Render Dublin geocoded points: dublin_district=-1 blue, else red (County=Dublin only)."
     )
     parser.add_argument(
         "--input",
-        default="geocoded-20260310-215024.csv",
-        help="Input geocoded CSV (e.g. geocoded-YYYYMMDD-HHMMSS.csv from multi_api_calling.py).",
+        default="districted-20260311-143854.csv",
+        help="Input districted CSV (e.g. districted-YYYYMMDD-HHMMSS.csv).",
     )
     parser.add_argument(
         "--output",
@@ -33,73 +35,71 @@ def to_float_or_none(value):
         return None
 
 
-def county_centroids(success_rows):
-    buckets = {}
-    for row in success_rows:
-        county = (row.get("County") or "").strip()
-        lat = to_float_or_none(row.get("latitude"))
-        lon = to_float_or_none(row.get("longitude"))
-        if not county or lat is None or lon is None:
-            continue
-        if county not in buckets:
-            buckets[county] = {"lat_sum": 0.0, "lon_sum": 0.0, "n": 0}
-        buckets[county]["lat_sum"] += lat
-        buckets[county]["lon_sum"] += lon
-        buckets[county]["n"] += 1
-
-    centroids = {}
-    for county, agg in buckets.items():
-        centroids[county] = {
-            "lat": agg["lat_sum"] / agg["n"],
-            "lon": agg["lon_sum"] / agg["n"],
-        }
-    return centroids
+def parse_district_int(value):
+    s = (str(value).strip() if value is not None else "")
+    if not s:
+        return None
+    try:
+        return int(float(s))
+    except (ValueError, TypeError):
+        return None
 
 
-def load_points(csv_path):
-    success_points = []
-    failed_points = []
+def load_dublin_points(csv_path):
+    """Only County=Dublin rows with successful geocode and coordinates; color by dublin_district."""
+    points = []
 
     with csv_path.open("r", newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         rows = list(reader)
 
     for row in rows:
+        county = (row.get("County") or "").strip().lower()
+        if county != "dublin":
+            continue
+
         status = (row.get("geocode_status") or "").strip()
         lat = to_float_or_none(row.get("latitude"))
         lon = to_float_or_none(row.get("longitude"))
-        item = {
-            "address": row.get("Address", ""),
-            "county": row.get("County", ""),
-            "status": status,
-            "query": row.get("geocode_query", ""),
-            "lat": lat,
-            "lon": lon,
-        }
-        if status in SUCCESS_STATUSES and lat is not None and lon is not None:
-            success_points.append(item)
-        else:
-            failed_points.append(item)
+        if status not in SUCCESS_STATUSES or lat is None or lon is None:
+            continue
 
-    centroids = county_centroids(success_points)
-    for item in failed_points:
-        if item["lat"] is None or item["lon"] is None:
-            county = (item["county"] or "").strip()
-            c = centroids.get(county)
-            if c:
-                item["lat"] = c["lat"]
-                item["lon"] = c["lon"]
-            else:
-                item["lat"], item["lon"] = DEFAULT_CENTER
+        d = parse_district_int(row.get("dublin_district"))
+        color = COLOR_DISTRICT_UNKNOWN if d == -1 else COLOR_DISTRICT_KNOWN
 
-    return success_points, failed_points
+        points.append(
+            {
+                "address": row.get("Address", ""),
+                "county": row.get("County", ""),
+                "status": status,
+                "query": row.get("geocode_query", ""),
+                "dublin_district": d,
+                "lat": lat,
+                "lon": lon,
+                "color": color,
+            }
+        )
+
+    return points
 
 
-def build_html(center, success_points, failed_points):
+def center_for_points(points):
+    if not points:
+        return DUBLIN_CENTER
+    return (
+        sum(p["lat"] for p in points) / len(points),
+        sum(p["lon"] for p in points) / len(points),
+    )
+
+
+def build_html(center, points):
+    n_blue = sum(1 for p in points if p["color"] == COLOR_DISTRICT_UNKNOWN)
+    n_red = len(points) - n_blue
+
     payload = {
         "center": {"lat": center[0], "lng": center[1]},
-        "success": success_points,
-        "failed": failed_points,
+        "points": points,
+        "stats": {"blue": n_blue, "red": n_red},
     }
     data_json = json.dumps(payload, ensure_ascii=False)
 
@@ -108,7 +108,7 @@ def build_html(center, success_points, failed_points):
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Geocode Map Demo (OpenStreetMap)</title>
+  <title>Dublin districts map (OpenStreetMap)</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     html, body, #map {{
@@ -145,7 +145,7 @@ def build_html(center, success_points, failed_points):
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     const DATA = {data_json};
-    const map = L.map('map').setView([DATA.center.lat, DATA.center.lng], 7);
+    const map = L.map('map').setView([DATA.center.lat, DATA.center.lng], 11);
 
     L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
       maxZoom: 19,
@@ -153,36 +153,36 @@ def build_html(center, success_points, failed_points):
     }}).addTo(map);
 
     function popupHtml(item) {{
+      const dist = item.dublin_district === null || item.dublin_district === undefined
+        ? '—' : String(item.dublin_district);
       return `
         <div style="max-width:320px;">
           <b>Status:</b> ${{item.status}}<br/>
           <b>Address:</b> ${{item.address}}<br/>
           <b>County:</b> ${{item.county}}<br/>
+          <b>dublin_district:</b> ${{dist}}<br/>
           <b>Query:</b> ${{item.query}}<br/>
           <b>Lat/Lon:</b> ${{item.lat}}, ${{item.lon}}
         </div>
       `;
     }}
 
-    function drawPoint(item, color) {{
+    function drawPoint(item) {{
       L.circleMarker([item.lat, item.lon], {{
         radius: 5,
         color: '#222',
         weight: 1,
-        fillColor: color,
+        fillColor: item.color,
         fillOpacity: 0.9
       }}).addTo(map).bindPopup(popupHtml(item));
     }}
 
-    for (const item of DATA.success) drawPoint(item, '#d32f2f');
-    for (const item of DATA.failed) drawPoint(item, '#808080');
+    for (const item of DATA.points) drawPoint(item);
 
-    const total = DATA.success.length + DATA.failed.length;
-    const successRate = total ? ((DATA.success.length / total) * 100).toFixed(2) : '0.00';
     document.getElementById('summary').innerHTML = `
-      <div><span class="dot" style="background:#d32f2f"></span>Success: <b>${{DATA.success.length}}</b></div>
-      <div><span class="dot" style="background:#808080"></span>Failed: <b>${{DATA.failed.length}}</b></div>
-      <div>Total: <b>${{total}}</b> | Success rate: <b>${{successRate}}%</b></div>
+      <div><span class="dot" style="background:{COLOR_DISTRICT_UNKNOWN}"></span>dublin_district = -1: <b>${{DATA.stats.blue}}</b></div>
+      <div><span class="dot" style="background:{COLOR_DISTRICT_KNOWN}"></span>其他: <b>${{DATA.stats.red}}</b></div>
+      <div>总计 (Dublin 且有坐标): <b>${{DATA.points.length}}</b></div>
     `;
   </script>
 </body>
@@ -201,15 +201,14 @@ def main():
         output_path = script_dir / output_path
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    success_points, failed_points = load_points(input_path)
-    html = build_html(DEFAULT_CENTER, success_points, failed_points)
+    points = load_dublin_points(input_path)
+    center = center_for_points(points)
+    html = build_html(center, points)
     output_path.write_text(html, encoding="utf-8")
 
-    total = len(success_points) + len(failed_points)
-    success_rate = (len(success_points) / total * 100) if total else 0.0
+    n_blue = sum(1 for p in points if p["color"] == COLOR_DISTRICT_UNKNOWN)
     print(f"Saved map HTML: {output_path}")
-    print(f"Success={len(success_points)} Failed={len(failed_points)} Total={total}")
-    print(f"Success rate={success_rate:.2f}%")
+    print(f"Dublin points={len(points)} (blue dublin_district=-1: {n_blue}, red otherwise: {len(points) - n_blue})")
 
 
 if __name__ == "__main__":
