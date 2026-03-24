@@ -7,23 +7,26 @@ from pathlib import Path
 
 DUBLIN_CENTER = (53.35, -6.26)
 SUCCESS_STATUSES = {"ok_nominatim", "ok_mapbox_strict", "ok_mapbox_relaxed"}
-COLOR_DISTRICT_UNKNOWN = "#1976d2"  # blue: dublin_district == -1
-COLOR_DISTRICT_KNOWN = "#d32f2f"  # red: otherwise
 REFERENCE_POINT = (53.346423829634354, -6.3382375566078455)
+
+COLOR_25 = "#1e88e5"  # left of meridian
+COLOR_26 = "#e53935"  # right-upper
+COLOR_27 = "#43a047"  # right-lower
+COLOR_OTHER = "#9e9e9e"
 
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Render Dublin geocoded points: dublin_district=-1 blue, else red (County=Dublin only)."
+        description="Render rematched Dublin districts map (25/26/27)."
     )
     parser.add_argument(
         "--input",
-        default="districted-20260311-143854.csv",
-        help="Input districted CSV (e.g. districted-YYYYMMDD-HHMMSS.csv).",
+        default="rematch-20260324-153908.csv",
+        help="Input rematch CSV (e.g. rematch-YYYYMMDD-HHMMSS.csv).",
     )
     parser.add_argument(
         "--output",
-        default="geocode_map_demo_osm.html",
+        default="rematch_map_demo_osm.html",
         help="Output HTML path.",
     )
     return parser.parse_args()
@@ -46,8 +49,17 @@ def parse_district_int(value):
         return None
 
 
+def district_color(d):
+    if d == 25:
+        return COLOR_25
+    if d == 26:
+        return COLOR_26
+    if d == 27:
+        return COLOR_27
+    return COLOR_OTHER
+
+
 def load_dublin_points(csv_path):
-    """Only County=Dublin rows with successful geocode and coordinates; color by dublin_district."""
     points = []
 
     with csv_path.open("r", newline="", encoding="utf-8") as f:
@@ -66,8 +78,6 @@ def load_dublin_points(csv_path):
             continue
 
         d = parse_district_int(row.get("dublin_district"))
-        color = COLOR_DISTRICT_UNKNOWN if d == -1 else COLOR_DISTRICT_KNOWN
-
         points.append(
             {
                 "address": row.get("Address", ""),
@@ -77,7 +87,7 @@ def load_dublin_points(csv_path):
                 "dublin_district": d,
                 "lat": lat,
                 "lon": lon,
-                "color": color,
+                "color": district_color(d),
             }
         )
 
@@ -94,14 +104,21 @@ def center_for_points(points):
 
 
 def build_html(center, points):
-    n_blue = sum(1 for p in points if p["color"] == COLOR_DISTRICT_UNKNOWN)
-    n_red = len(points) - n_blue
+    c25 = sum(1 for p in points if p["dublin_district"] == 25)
+    c26 = sum(1 for p in points if p["dublin_district"] == 26)
+    c27 = sum(1 for p in points if p["dublin_district"] == 27)
+    c_other = len(points) - c25 - c26 - c27
 
     payload = {
         "center": {"lat": center[0], "lng": center[1]},
         "points": points,
-        "stats": {"blue": n_blue, "red": n_red},
         "reference_point": {"lat": REFERENCE_POINT[0], "lng": REFERENCE_POINT[1]},
+        "stats": {
+            "d25": c25,
+            "d26": c26,
+            "d27": c27,
+            "other": c_other,
+        },
     }
     data_json = json.dumps(payload, ensure_ascii=False)
 
@@ -110,7 +127,7 @@ def build_html(center, points):
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dublin districts map (OpenStreetMap)</title>
+  <title>Rematch districts map (OpenStreetMap)</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     html, body, #map {{
@@ -130,6 +147,7 @@ def build_html(center, points):
       padding: 10px 12px;
       font-size: 13px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      line-height: 1.5;
     }}
     .dot {{
       display: inline-block;
@@ -154,18 +172,9 @@ def build_html(center, points):
       attribution: '&copy; OpenStreetMap contributors'
     }}).addTo(map);
 
-    // Split lines:
-    // 1) Ray from reference point to the east along the same latitude.
-    // 2) Full meridian line through the reference point longitude.
     const ref = DATA.reference_point;
-    const eastRay = [
-      [ref.lat, ref.lng],
-      [ref.lat, 180]
-    ];
-    const meridianLine = [
-      [-90, ref.lng],
-      [90, ref.lng]
-    ];
+    const eastRay = [[ref.lat, ref.lng], [ref.lat, 180]];
+    const meridianLine = [[-90, ref.lng], [90, ref.lng]];
 
     L.polyline(eastRay, {{
       color: '#2e7d32',
@@ -218,8 +227,10 @@ def build_html(center, points):
     for (const item of DATA.points) drawPoint(item);
 
     document.getElementById('summary').innerHTML = `
-      <div><span class="dot" style="background:{COLOR_DISTRICT_UNKNOWN}"></span>dublin_district = -1: <b>${{DATA.stats.blue}}</b></div>
-      <div><span class="dot" style="background:{COLOR_DISTRICT_KNOWN}"></span>其他: <b>${{DATA.stats.red}}</b></div>
+      <div><span class="dot" style="background:{COLOR_25}"></span>25（直线左侧）: <b>${{DATA.stats.d25}}</b></div>
+      <div><span class="dot" style="background:{COLOR_26}"></span>26（右侧且射线上方）: <b>${{DATA.stats.d26}}</b></div>
+      <div><span class="dot" style="background:{COLOR_27}"></span>27（右侧且射线下方）: <b>${{DATA.stats.d27}}</b></div>
+      <div><span class="dot" style="background:{COLOR_OTHER}"></span>其他区号: <b>${{DATA.stats.other}}</b></div>
       <div>总计 (Dublin 且有坐标): <b>${{DATA.points.length}}</b></div>
     `;
   </script>
@@ -244,10 +255,10 @@ def main():
     html = build_html(center, points)
     output_path.write_text(html, encoding="utf-8")
 
-    n_blue = sum(1 for p in points if p["color"] == COLOR_DISTRICT_UNKNOWN)
     print(f"Saved map HTML: {output_path}")
-    print(f"Dublin points={len(points)} (blue dublin_district=-1: {n_blue}, red otherwise: {len(points) - n_blue})")
+    print(f"Dublin points={len(points)}")
 
 
 if __name__ == "__main__":
     main()
+
