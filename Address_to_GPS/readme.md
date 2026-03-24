@@ -60,34 +60,103 @@
 
 ---
 
-### step3_map_preview.py：地理编码结果地图预览
+### step3_map_preview.py：districted 地图预览（含分割线）
 
 **作用**  
-将 geocoded CSV 生成一张交互式 HTML 地图（OpenStreetMap + Leaflet），用圆点区分成功/失败，便于检查地理编码效果。
+将 `districted` CSV 生成一张交互式 HTML 地图（OpenStreetMap + Leaflet），
+仅展示 `County=Dublin` 且地理编码成功的点，并按 `dublin_district` 着色：
+- `dublin_district = -1`：蓝色
+- 其他区号：红色
+
+此外会绘制一组参考分割线（后续 step4 rematch 也使用同一规则）：
+- 参考点：`(53.346423829634354, -6.3382375566078455)`
+- 从该点向东（右）沿纬线发出的射线
+- 穿过该点、沿经线方向的直线
 
 **输入数据**  
-- 默认输入：`geocoded-20260310-123456.csv`（可通过 `--input` 指定，通常为 `step1_geocode.py` 输出的 `geocoded-*.csv`）
-- 依赖列：`Address`、`County`、`geocode_status`、`latitude`、`longitude`（若有 `geocode_query` 会在弹窗中显示）
+- 默认输入：`districted-20260311-143854.csv`（可通过 `--input` 指定，通常为 `step2_districts.py` 输出的 `districted-*.csv`）
+- 依赖列：`Address`、`County`、`geocode_status`、`latitude`、`longitude`、`dublin_district`（若有 `geocode_query` 会在弹窗中显示）
 - 相对路径会按脚本所在目录（`Address_to_GPS/`）解析
 
-**成功/失败判定**  
-- **成功（红点）**：`geocode_status` 为 `ok_nominatim`、`ok_mapbox_strict` 或 `ok_mapbox_relaxed`，且 `latitude`、`longitude` 有效。
-- **失败（灰点）**：其余情况。没有有效经纬度的行也算失败。
-
-**圆点位置**  
-- 成功点、以及有经纬度的失败点：使用 CSV 中的 `latitude`、`longitude`。  
-- 没有经纬度的失败点：先尝试用同 County 成功点的平均坐标（县中心）；若该 County 无成功点则落在爱尔兰中心 `(53.425, -7.944)`。这样所有记录都会出现在图上，但无坐标的灰点位置仅为占位。
+**点筛选逻辑**  
+- 只绘制 `County=Dublin`、`geocode_status` 属于成功集合（`ok_nominatim` / `ok_mapbox_strict` / `ok_mapbox_relaxed`）且经纬度有效的行。
 
 **输出**  
-- 默认输出：`geocode_map_demo_osm.html`（在 `Address_to_GPS/` 下），用浏览器打开即可。左上角有成功数、失败数、总数与成功率。
+- 默认输出：`geocode_map_demo_osm.html`（在 `Address_to_GPS/` 下），用浏览器打开即可。
 
 **用法**  
 ```bash
-# 使用默认输入 geocoded-20260310-123456.csv
+# 使用默认输入 districted-20260311-143854.csv
 python3 Address_to_GPS/step3_map_preview.py
 
-# 指定 geocoded 文件与输出 HTML
-python3 Address_to_GPS/step3_map_preview.py --input geocoded-20260310-215024.csv --output my_map.html
+# 指定 districted 文件与输出 HTML
+python3 Address_to_GPS/step3_map_preview.py --input districted-20260311-143854.csv --output my_map.html
+```
+
+---
+
+### step4_rematch.py：对 `dublin_district=-1` 的 Dublin 数据重分类
+
+**作用**  
+对 `districted` 文件中所有 `County=Dublin` 且 `dublin_district=-1` 的行，
+根据参考点与分割线规则重分配到 `25/26/27`。
+
+**输入数据**  
+- 默认输入：`districted-20260311-143854.csv`
+- 依赖列：`County`、`dublin_district`、`latitude`、`longitude`
+
+**重分类规则**  
+参考点：`(53.346423829634354, -6.3382375566078455)`  
+1. 直线左侧（`lon < 参考经度`）→ `25`  
+2. 直线右侧且射线上方（`lon >= 参考经度` 且 `lat >= 参考纬度`）→ `26`  
+3. 直线右侧且射线下方（`lon >= 参考经度` 且 `lat < 参考纬度`）→ `27`
+
+**处理范围**  
+- 仅修改 `County=Dublin` 且 `dublin_district=-1` 且经纬度有效的行。
+- 其他行保持原样。
+
+**输出**  
+- 输出文件名：`rematch-YYYYMMDD-HHMMSS.csv`（可通过 `--output-prefix` 修改前缀）。
+
+**用法**  
+```bash
+# 使用默认输入
+python3 Address_to_GPS/step4_rematch.py
+
+# 指定输入文件
+python3 Address_to_GPS/step4_rematch.py --input districted-20260311-143854.csv
+```
+
+---
+
+### step5_map_preview.py：rematch 结果地图预览
+
+**作用**  
+效仿 step3，对 `rematch` 结果做可视化，重点显示 `25/26/27` 分区效果。
+
+**输入数据**  
+- 默认输入：`rematch-20260324-153908.csv`
+- 依赖列：`Address`、`County`、`geocode_status`、`latitude`、`longitude`、`dublin_district`
+
+**显示逻辑**  
+- 仅绘制 `County=Dublin` 且地理编码成功、经纬度有效的点。  
+- 颜色：
+  - `25`：蓝色
+  - `26`：红色
+  - `27`：绿色
+  - 其他区号：灰色
+- 同时绘制与 step3 相同的参考点和两条分割线，便于核对分类结果。
+
+**输出**  
+- 默认输出：`rematch_map_demo_osm.html`
+
+**用法**  
+```bash
+# 使用默认输入 rematch-20260324-153908.csv
+python3 Address_to_GPS/step5_map_preview.py
+
+# 指定 rematch 文件与输出 HTML
+python3 Address_to_GPS/step5_map_preview.py --input rematch-20260324-153908.csv --output rematch_map.html
 ```
 
 ---
@@ -111,4 +180,13 @@ python3 Address_to_GPS/step1_geocode.py --input ../ppr-group-25208508-train.csv
 
 # 2）经纬度 → 都柏林区号（输出 districted-*.csv）
 python3 Address_to_GPS/step2_districts.py --input geocoded-YYYYMMDD-HHMMSS.csv
+
+# 3）预览 districted 地图（含参考分割线）
+python3 Address_to_GPS/step3_map_preview.py --input districted-YYYYMMDD-HHMMSS.csv
+
+# 4）对 Dublin 且 dublin_district=-1 的记录做 rematch（输出 rematch-*.csv）
+python3 Address_to_GPS/step4_rematch.py --input districted-YYYYMMDD-HHMMSS.csv
+
+# 5）预览 rematch 地图（25/26/27 分类效果）
+python3 Address_to_GPS/step5_map_preview.py --input rematch-YYYYMMDD-HHMMSS.csv
 ```
