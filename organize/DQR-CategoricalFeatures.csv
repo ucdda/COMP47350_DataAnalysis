@@ -1,0 +1,6 @@
+Feature,count,unique,top,freq,missing_%,cardinality
+Property Size Description,2835,4,greater than or equal to 38 sq metres and less than 125 sq metres,2104,94.75,4
+County,53991,26,Dublin,16592,0.0,26
+Description of Property,53991,3,Second-Hand Dwelling house /Apartment,44324,0.0,3
+Not Full Market Price,53991,2,No,51144,0.0,2
+VAT Exclusive,53991,2,No,44478,0.0,2
