@@ -61,3 +61,13 @@
 ---
 
 **Approximate total hours per member: ~24h each**
+
+# Section 3: Signed Declaration
+
+*"I certify this contribution statement is accurate. I understand that misrepresentation is academic misconduct."*
+
+| Member | Signature | Date |
+|--------|-----------|------|
+| Fangxun Wu | | |
+| Yang Liu | | |
+| Kaiwen Yao | | |
