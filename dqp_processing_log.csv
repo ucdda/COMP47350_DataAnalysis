@@ -1,0 +1,12 @@
+step,rows_before,rows_after,rows_delta,cols_before,cols_after,cols_delta,notes
+Standardize text + parse date + parse price + create Sale Year/Month,54000,54000,0,9,11,2,
+Drop fully-empty / constant columns,54000,54000,0,11,11,0,empty_cols=[]; const_cols=[]
+Drop duplicate rows,54000,53991,-9,11,11,0,duplicates_removed=9
+Filter invalid core rows (price/date/county),53991,53991,0,11,11,0,rejected_rows=0
+Scheme A: derive address features then drop Address,53991,53991,0,11,16,5,"Added: is_apartment, has_number, dublin_district, area_token + missing flags"
+Reduce area_token cardinality (freq>=50 -> keep else Other),53991,53991,0,16,17,1,"MIN_COUNT=50, unique_before=14683, once_before=9602 (65.4% of unique), kept_cardinality=133, coverage=21.24%, reduced_cardinality=134, Other=78.76%"
+VAT adjustment: create Price_Adjusted_VAT + vat_adjusted_flag,53991,53991,0,17,19,2,"VAT_RATE=0.135, affected_rows=9513"
+VAT price clamping: create Price_Adjusted_VAT_Clamped using p05–p95,53991,53991,0,19,20,1,"p05_vat=60000.00, p95_vat=721137.50, clamped_rows=5333"
+High-missing columns: optional drop (threshold-based),53991,53991,0,20,19,-1,"DROP_MISSING_PCT=90.0, candidates=1, dropped=['Property Size Description']"
+Drop Eircode column explicitly (group decision),53991,53991,0,19,18,-1,
+"Fill missing values (cat='Unknown', num=median)",53991,53991,0,18,18,0,
