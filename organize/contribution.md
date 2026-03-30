@@ -6,8 +6,8 @@
 | (2) DQP | 20% | 60% | 20% |  |
 | (3) Feature pairs | 34% | 33% | 33% |  |
 | (4) New features | 20% | 20% | 60% |  |
-| (5) Models | 34% | 33% | 33% |  |
-| **Overall** | **34%** | **33%** | **33%** |  |
+| (5) Models | 24% | 38% | 38% |  |
+| **Overall (weighted)** | **≈33%** | **≈33%** | **≈34%** |  |
 
 # Section 2: Detailed Task Log
 
