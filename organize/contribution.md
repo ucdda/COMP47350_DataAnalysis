@@ -7,7 +7,7 @@
 | (3) Feature pairs | 34% | 33% | 33% |  |
 | (4) New features | 20% | 20% | 60% |  |
 | (5) Models | 24% | 38% | 38% |  |
-| **Overall (weighted)** | **≈33%** | **≈33%** | **≈34%** |  |
+| **Overall (weighted)** | **34%** | **33%** | **33%** |  |
 
 # Section 2: Detailed Task Log
 
